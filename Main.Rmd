@@ -1,0 +1,151 @@
+---
+output:
+  pdf_document:
+    highlight: tango
+header-includes: \usepackage{placeins} 
+  \usepackage{dcolumn} 
+  \usepackage{fancyhdr} 
+  \usepackage{setspace}
+  \usepackage{chngcntr} 
+  \usepackage{microtype} 
+  \onehalfspacing 
+  \counterwithin{figure}{section}
+  \counterwithin{table}{section} 
+  \usepackage{rotating, graphicx}
+linkcolor: black
+geometry: margin = 1.2in
+fontsize: 12.5pt
+urlcolor: black
+bibliography: bibliography/bts_thesis.bib
+---
+
+
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+
+        {\huge{\textit{Bayesian truth serum fused conjoint}}}
+
+        
+        \vspace{0.5cm}
+        Master thesis
+        
+        \vspace{1.5cm}
+        
+        {\LARGE{\textit{Grigor Dimitrov}}}
+        
+        \vfill
+        
+        A thesis presented for the degree of\\
+        Master of science
+        
+        \vspace{0.8cm}
+        
+        \includegraphics{md/logo_erasmus_1.jpg}
+        
+        Department of Business and Economics\\
+        Erasmus School of Economics\\
+        Rotterdam, The Netherlands\\
+        `r format(Sys.time(), '%d %B, %Y')`"
+        
+    \end{center}
+    
+\textit{Supervisor: Chen Li}\\
+\textit{First-reader: Aurelien Baillon}
+
+\end{titlepage}
+
+
+\pagenumbering{arabic} 
+
+\centering
+
+**Abstract**
+
+\raggedright
+
+"Conjoint methodology has been widely used in marketing research to answer a variety of business questions. However, it is usually performed in hypothetical settings, which raised questions by both practitioners as well as academicians on its validity. Recent studies investigated whether implementing incentive-compatible schemes would improve conjoint analysis predictive power. The results have been positive so far, but there are certain disadvantages associated with each approach. In this paper I will explore a relatively new incentive-compatible mechanism, the Bayesian truth serum. The method is easy to be implemented and it does not change the conjoint methodology. The method assigns high scores to respondents when they have surprisingly common answers, e.g when the frequency of their answer is higher than commonly predicted by the rest of the respondents. The Bayesian truth serum model outperformed the control group on several key metrics providing first plausible results for the adoption of the method into the preference measurement methodologies."
+
+\clearpage
+
+\tableofcontents
+
+
+```{r echo=FALSE, message = FALSE}
+
+#ADD PACKAGES HERE
+library(stargazer)
+library(xtable)
+options(xtable.comment=FALSE)
+
+```
+
+\newpage
+
+# Introduction
+
+```{r child = 'md/introduction.Rmd'}
+```
+
+# Literature review
+
+```{r child = 'md/literature_CA.Rmd'}
+```
+
+```{r child = 'md/literature_LIM.Rmd'}
+```
+
+```{r child = 'md/literature_BTS.Rmd'}
+```
+
+# Hypotheses
+
+Based on the research question, research objectives, and the literature review I hereby formulate the following hypotheses:
+
+>H1. BTS will outperform the control group on choices where on of the alternatives dominate the other.
+
+>H2. The model estimated from the BTS sample will provide higher prediction score comparing the actual choice and the fitted model.
+
+>H2.1 Comparing in-sample absolute difference between the actual and the predicted choice
+
+>H2.2 Comparing in-sample prediction-realization table
+
+>H2.3 Comparing out-of-sample absolute difference between the actual and the predicted choice
+
+>H2.4 Comparing out-of-sample prediction-realization table
+
+# Methodology
+
+```{r child = 'md/methodology.Rmd'}
+```
+
+# Results
+
+```{r child = 'md/results.Rmd'}
+```
+
+# Conclusion
+
+```{r child = 'md/conclusion.Rmd'}
+```
+
+# Appendix #1 Figures and Graphs
+
+```{r child = 'md/appendix_figures.Rmd'}
+```
+
+
+# Appendix #2 Code
+
+```{r child = 'md/appendix_code.Rmd'}
+```
+
+# Appendix #3 Design and Survey
+
+```{r child = 'md/appendix_survey.Rmd'}
+```
+
+
+# References

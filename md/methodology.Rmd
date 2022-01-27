@@ -1,0 +1,125 @@
+---
+title: "methodology"
+author: "Grigor Dimitrov"
+date: "November 19, 2016"
+output: pdf_document
+---
+
+The methodology chapter of the paper explains in details all of the procedures done in the analysis. The methodology part of this paper describes in details the following five steps of the experiment.
+
+1.    Questionnaire design 
+2.    Designing a discrete choice experiment
+3.    Analysis of the choice experiment
+4.    Empirical comparison methodology
+
+### Questionnaire design 
+
+The context chosen for the conjoint experiment is data privacy. More precisely, the questions assess respondents' choices related to giving up their private online behavioral data on different electronic devices they are using for various reimbursment schemes. 
+
+A computer-administered survey was executed. The survey included the following sections:
+
+1. Instructions: regarding the incentives respondents will obtain;
+2. A definition of what is behavioral data in order to understand the choice task;
+3. A short description of a fictional company with a follow-up question, whether respondents understood the experimental context;
+4. Main section, a conjoint exercise with 12 trade-off tasks, where each task consists of a choice between two profiles with different combinations of attribute levels;
+5. Follow up questions demographic questions and contact information (if respondents wish to participate in the draw);
+
+A between subject design was created and respondents were randomly allocated either to the BTS condition or to the control group. The instructions of the experiment were different. In the control group, respondents were instructed that at random one participant will receive an award of 20 euros. In the BTS condition, respondents were instructed that truthful scores are calculated and the person with the highest truth score will receive 20 euros.  The main section of the conjoint experiment also differed between the two groups. Respondents were given a total of 12 conjoint tasks and in each task, they were required to make a choice between two options. In the control condition, respondents were asked to provide only their choice. In the BTS condition, additionally to each choice task, respondents were asked to predict the average distribution of people who would make the same choice.
+
+Each task results in a variable indicating respondents' choice. This variable has been used to provide an input for the dependent variable of the logit model. The data is structured as a binary dependent variable indicating a choice and zero otherwise. The independent variables are represented by the attribute levels of each task. Each choice results in one observation, dependent variable indicating whether one task has been chosen over the other and the independent variables are indicating the level difference between the two alternatives that were shown to the respondents. In total there 12 observations per respondent.
+
+Each task looks as follows:
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("md/Cjnt.jpg")
+```
+
+In addition to each conjoint task, the respondents in the BTS condition had to answer an addional question:
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("md/CjntBTS.jpg")
+```
+
+After each conjoint task respondents were presented a question asking them to estimate what proportion of the population they think will make the same choice as they did. To reduce respondents' burden and optimize the survey for mobile devices instead of typing in their guess in an open field, respondents were presented a scale with intervals. That way they did not give an exact estimate of the proportion of the population that would supply with the same answer, but rather an estimate within a given range. 
+
+BTS has been analyzed according to the scoring formula, explained in the BTS section of the literature review. As the survey uses interval scale instead of open answer input, for the prediction score estimation, the function uses the midpoint of the given range. To calculate respondents' truth scores from the BTS condition two inputs were required. First, their actual choice and second their midpoint of the given range indicated in the follow-up question. Based on the truth score calculation, the respondent with the highest truth score was rewarded 20 Euros. 
+
+## Designing a discrete choice experiment
+
+For the design of the choice experiment, I use @horne2014package and @wheeler2014algdesign. The method utilizes fractional factorial design for designing optimal choice experiments. Essentially the function works in the following way: as input values, it takes the number of attributes and levels associated with each attribute, the number of versions of the exercise, the number of desired choice tasks per each exercise and the number of alternatives per each task. Then it runs full factorial design for the given number of factors and levels. In accordance with the specified inputted number of tasks the function reduces the number of alternatives and generates optimal fractional factorial design. For a full discussion see @fedorov1972theory.
+
+The conjoint design includes three attributes and each attribute has three levels, as follows:
+
+```{r, echo=FALSE, results='asis', message=FALSE}
+
+
+attributes <- cbind(
+ c("Desktop computer", "Mobile device", "Desktop and Mobile"),
+ c("Internet usage", "Internet usage and Apps usage", "Internet usage and Apps usage and, Location"),
+ c("8 Euro", "10 Euro", "12 Euro")
+)
+
+colnames(attributes) <- c("Device", "Extent", "Reimbursement")
+rownames(attributes) <- c("Level 1", "Level 2", "Level 3")
+
+print( xtable( attributes ), include.rownames = TRUE)
+#print(  attributes )
+
+```
+
+The attributes and levels were determined based on consultation with a company provider of such data collections technology. The motivation for selecting this particular context is the increasing demand for behavioral data in the area of market research. Since this is an emerging trend, there is still no sufficient information about how much companies should pay to the participants for their data, nor do participants have experience selling it. The focus of this research, however, is not in the particular context of the survey.
+
+In order to fulfill the design requirements of Bayesian truth serum, the respondents are presented with forced choice among two alternatives (i.e. "None" alternative has not been presented). Furthermore, all of the respondents are shown the same version of the questionnaire. This design poses certain limitations on the conjoint strength, which are discussed in details the "Limitations" chapter. The full conjoint design can be found in the appendix: _Appendix #3 Design and Survey_.
+
+## Analysis of the choice experiment
+
+### Logit model
+
+To derive the estimated parameters logit model is used. To estimate the preferences for the different levels per attribute, utilities of each attribute levels are computed, the utility of the attribute is simply the sum of all of its levels. The "utilities are latent variables and are assumed to be a function of a set of explanatory variables X" [@walker2002generalized]:
+
+The decision maker will choose an alternative with the highest utility: 
+
+$$\operatorname{Pr}(\text{Choice} = 1 \mid \text{D, E, P}) = \operatorname{F}( \beta_{0} + \beta_{1} \text{Device} + \beta_{2} \text{Extent} + \beta_{3} \text{Price)} )  $$
+
+
+
+Hence, the probability of choosing alternative I is: 
+
+$$\operatorname{Pr}(\text{Choice} = 1 \mid \text{D, E, P}) = \frac{\exp(\beta_{0} + \beta_{1} \text{Device} + \beta_{2} \text{Extent} + \beta_{3} \text{Price)} }{1 + \exp(\beta_{0} + \beta_{1} \text{Device} + \beta_{2} \text{Extent} + \beta_{3 }\text{Price})} $$
+
+The final model includes the BTS treatment as an independent variable in the model and the effects of the treatment interacting with the independent variables i.e. device, extent and price. Therefore the model is taking the following form:
+
+
+$$\operatorname{Pr}(\text{Choice} = 1 \mid \text{D, E, P, BTS}) = \operatorname{F}( \beta_{0} + \beta_{1} \text{Device} + \beta_{2} \text{Extent} + \beta_{3} \text{Price} + \beta_{4} \text{BTS} + \beta_{5} \text{(BTS*Device)}+ \beta_{6} \text{(BTS*Extent)}+ \beta_{7} \text{(BTS*Price)})  $$
+
+
+### Model performance
+
+In order to compare the models I will use the following performance indicators:
+
+* Log likelihood
+* Akaike Information Criteria
+* McFadden R2
+
+
+### Predictions comparison
+
+There are several ways to compare choice-model model performance based on a prediction-realization table (hit-rate table). If there is higher hit rate, that would imply a higher external validity. 
+
+
+|          |          |           |          |          |
+|:--------:|:--------:|:---------:|:--------:|:--------:|
+|          |          | Predicted |          |          |
+|          |          |  Choice 1 | Choice 2 |          |
+| Observed | Choice 1 |  $p_{11}$ | $p_{21}$ | $p_{1.}$ |
+|          | Choice 2 |  $p_{21}$ | $p_{22}$ | $p_{1.}$ |
+|          |          |  $p_{.1}$ | $p_{.2}$ |    $1$   |
+
+
+In-Sample prediction refers to producing a hit rate table for each observed choice in the data and comparing it to the predicted choice. The ratio between the correctly predicted choices and the incorrect ones is referred to as hit-rate. The higher the hit-rate the better the prediction realization of the model. Out-of-sample prediction refers to the same setting, however, a certain number of random observations are excluded from the sample and the model is estimated over the rest of the observations. The prediction realization table is produced over the observations that are not included in the sample. In this case, I left out 30% of the sample when producing the out-of-sample prediction realization table.
+
+### Residuals comparison
+
+I will use sum of squared residuals (SSR) to compare the two conditions. SSR is the absolute difference between the actual choices and the fit model i.e. the deviations from the actual empirical values. Since the number of observations slightly differs per condition I will scale down to the number of observations. Smaller residual difference indicates less devation between the actual empirical values and the predicted values, thus, the smaller the SSR value the better.
+
+$$ \text{SSR} = \sum_{i=1}^n(\hat{Y}_{i} - \bar{Y})^2 $$

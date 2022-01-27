@@ -1,0 +1,255 @@
+---
+title: "results"
+author: "Grigor Dimitrov"
+date: "November 19, 2016"
+output: pdf_document
+---
+
+## General results
+
+
+A total of `r nrow(t_data)` respondents were collected for this study. Primarily in the age range of 25-34: `r sum(s_data$Q45==13, na.rm = T)` respondents and 18-24: `r sum(s_data$Q45==12, na.rm = T)`. `r sum(s_data$Q44==1, na.rm = T)` are males, the other `r sum(s_data$Q44==2, na.rm = T)` females. Most of them are employed `r sum(s_data$Q46==2, na.rm = T)`. Proportions are similar across the two conditions, `r sum(t_data$group==1, na.rm = T)` in the control group and `r sum(t_data$group==2, na.rm = T)` in BTS. More elaborate descriptive statistics can be found in the appendix.
+
+## Analysis
+
+### Model and coefficients
+
+The outcome of the conjoint exercise results in 4 variables: 
+* 3 categorical independent variables each representing an attribute with 3 levels. Each level of the first two attributes, "Device" and "extent" was converted to a binary variable taking value 1 if the level was present and zero otherwise. The third attribute "Reimbursement" was converted to a continuous variable with 3 degrees of freedom, taking values 8, 10 and 12.
+* A dependent variable indicating the choice of the respondent per task
+
+The variables are described in the table below, the third level serves as a base level in the logit model, therefore it is omitted in the coefficients' table. The last row indicates the dependent variable:
+
+```{r, results='asis', echo=FALSE, warning=FALSE}
+
+varlist <- matrix("", nrow = 9, ncol = 4)
+
+varlist[1,1] <- "Attribute"
+varlist[1,2] <- "Level"
+varlist[1,3] <- "Variable name"
+varlist[1,4] <- "Variable type"
+
+varlist[2:4,1] <- "Device"
+varlist[5:7,1] <- "Extend"
+varlist[8,1] <- "Reimbursement"
+
+varlist[2,2] <- "Level 1"
+varlist[3,2] <- "Level 2"
+varlist[4,2] <- "Level 3"
+
+varlist[5,2] <- "Level 1"
+varlist[6,2] <- "Level 2"
+varlist[7,2] <- "Level 3"
+
+varlist[8,2] <- "-"
+
+varlist[2,3] <- "Desktop"
+varlist[2,4] <- "Binary"
+
+varlist[3,3] <- "Mobile"
+varlist[3,4] <- "Binary"
+
+varlist[4,3] <- "Both(Desktop and Mobile)"
+varlist[4,4] <- "Binary"
+
+varlist[5,3] <- "Browsing history"
+varlist[5,4] <- "Binary"
+
+varlist[6,3] <- "Browsing history and Applications"
+varlist[6,4] <- "Binary"
+
+varlist[7,3] <- "Browsing history, Applications, Location"
+varlist[7,4] <- "Binary"
+
+varlist[8,3] <- "Reimbursement" 
+varlist[8,4] <- "Continuous"
+
+varlist[9,1] <- "-"
+varlist[9,2] <- "-"
+varlist[9,3] <- "Choice"
+varlist[9,4] <- "Binary"
+
+
+varlist <- as.data.frame(varlist)
+
+stargazer(varlist, type = "latex", summary = FALSE, rownames = F, colnames = F, header = F)
+
+```
+
+
+Table 5.1 represents the logit parameters estimates for the overall population (All), overall population with the BTS condition as a covariate (All\*BTS)  and a model estimated on the isolated datasets from the two conditions. This table provides me with information regarding the direction of the relationship and also the significance. All variables are significant and have a positive relationship with the probability of making a choice in comparison to the base level. In the model that presents BTS treatment as a covariate I observe where BTS treatment alters the stated preference of the respondents' choices.
+
+
+```{r, results='asis', echo=FALSE, warning=FALSE}
+
+ref_labels_v2 <- c("Desktop (D)", "Mobile (M)", "Base: D + M", "Browsing History (BH)", "BH + Apps Usage (AU)", "Base: BH + AU + Location", "Price (Euro)", "BTS", 
+                   paste0("BTS:", c("Desktop (D)", "Mobile (M)", "Base: D + M", "Browsing History (BH)", "BH + Apps Usage (AU)", "Base: BH + AU + Location", "Price (Euro)")))
+
+stargazer(
+  altvar$results_all,   
+  altvar$results_allbts,
+  altvar$results_control,
+  altvar$results_bts, 
+  covariate.labels = ref_labels_v2,
+  type = "latex", column.labels = c("All","All*BTS", "Control", "BTS"),
+  header = F, 
+  title = "Binary logit coefficients",
+  dep.var.labels = "Choice = 1"
+  )
+
+
+
+
+```
+
+In general, keeping other factors constant:
+
+1. Featuring desktop data in the product increases the probability of subjects making a choice compared with the base level i.e. featuring both desktop and mobile data;
+2. Featuring mobile data in the product increases the probability of subjects making a choice compared with the base level i.e. featuring both desktop and mobile data;
+3. Featuring browsing history data in the product increases the probability of subjects making a choice compared with the base level i.e. featuring browsing data, applications data, and location;
+4. Featuring browsing history data and applications data in the product increases the probability of subjects making a choice compared with the base level i.e. featuring browsing data, applications data and location;
+5. Increasing the reimbursement featured in the product increases the probability of subjects making a choice.
+
+However based on the model with the BTS as a covariate (All*BTS) I observe:
+
+1. The base level probability of subjects making a choice between (i.e. BTS variable value) BTS and the control group is not significantly different;
+2. Featuring the different device levels does not significantly impact the choice of the two groups;
+3. Featuring the different levels of information sharing i.e. Extent, also, does not significantly impact the choice of the two groups;
+4. The Price has a significantly different impact on the choice between the two groups.
+
+Looking at the model fit, I can see that the Akaike criterion is smaller for the BTS model compared to the control group. The Akaike criterion is used as a relative measure to compare the goodness of a model between several models; the lower the Akaike criterion, the better the fit. However the sample size between the two groups differs and ths this measure is not informative when it comes to comparison.
+
+Exploring the odds ratios also gives a clear way of comparison of the attribute importance of a hypothetical product. One euro increase of the reimbursement gives àround 25% higher odds of choosing a product in the BTS comparing to the control group. The impact of featuring Browsing history and applications (Level 2 of the _Extent_ attribute) in the product is almost as high as double in BTS compared to the control group. A detailed plot of the values from the table below can be found in _Appendix 1. Figures and Graphs_, _Section: Odds Ratios_.
+
+```{r, results='asis', echo=FALSE, warning=FALSE}
+
+stargazer(altvar$results_or$table_or,
+          type = "latex",
+          summary = FALSE,
+          header = F,
+          align = T,
+          title = "Odds ratios",
+          notes = ref_notes)
+
+```
+
+
+Furthermore, to see if there is a difference between the magnitude of each variable over the choice, I look at the marginal effects of each variable ( table 5.3). There are certain differences between the two models. First, featuring desktop data seems to have a similar effect across the two models, while featuring mobile data is associated with much lower effect. However, a product featuring browsing history increases the probability of making a choice by `r round(altvar$results_mfx$table_mfx[3,2],2)` percentage points relative to a product featuring browsing history, application usage and location in the BTS condition, whereas this probability increases by `r round(altvar$results_mfx$table_mfx[3,1],2)` percentage points for the control group. The probability of making a choice increases by `r round(altvar$results_mfx$table_mfx[5,2],2)` percentage points when the reimbursement increases by one euro in the BTS conditions, while for the control group, it increases by `r round(altvar$results_mfx$table_mfx[5,1],2)` percentage points. A detailed plot of the values from the table below can be found in _Appendix 1. Figures and Graphs_, _Section: Marginal Effects_. Furthermore, an isolated effect of the treatment on the product characteristics is presented in _Section:Marginal Effects - BTS Treatment impact_.
+
+```{r, results='asis', echo=FALSE, warning=FALSE}
+
+stargazer(altvar$results_mfx$table_mfx, 
+          type = "latex", 
+          summary = FALSE, 
+          header = F,
+          align = T,
+          title = "Marginal effects",
+          notes = ref_notes)
+
+```
+
+### Prediction realization tables
+
+#### In-sample predictions
+
+In sample prediction realization table has been obtained by crossing the number of prediction estimation versus the actual numbers. As the estimates are probabilities, 0.5 cut-off point has been used i.e. all predictions higher that this threshold are considered as choice and all below otherwise. Graphical representation of the table below can be found in _Appendix 1. Figures and Graphs_, _Section: Receiver operating characteristic curve > ROC In-Sample Predictions_. The difference between the confusion matrix below and the ROC curve is that in the ROC curbe the cut-off point of 0.5 has been varied.
+
+```{r, results='asis', echo=FALSE, warning=FALSE}
+
+stargazer(altvar$results_is$final_table, 
+          type = "latex", 
+          rownames = F, 
+          header = F,
+          summary = F, 
+          title = "Prediction realization table In-Sample Predictions",
+          notes = c( paste('Control Accuracy',round(1-altvar$results_is$g1_result, 3)), 
+                     paste('BTS Accuracy',    round(1-altvar$results_is$g2_result, 3))))
+
+```
+
+In the tables above the BTS model performs slightly better producing a higher percentage of accurate prediction than the control group. Furthermore, the area below the ROC curve is larger for the BTS condition compared to the control group, which indicates better performance (See Appendix #1 for reference).
+
+
+#### Out-of-sample predictions
+
+Out-of-sample prediction realization table is similar to the in-sample one, however, when estimating the model I am using only random 70% of the observations and then fitting the model in the rest of the observations. The results in these tables are obtained over the random 30% of the observations not included in the model. Again similar to the in-sample table a 0.5% cut-off threshold has been applied. Graphical representation of the table below can be found in _Appendix 1. Figures and Graphs_, _Section: Receiver operating characteristic curve > ROC Out-Of-Sample Predictions_.
+
+```{r, results='asis', echo=FALSE, warning=FALSE}
+
+stargazer(altvar$results_os$final_table, 
+          type = "latex", 
+          header = F,
+          rownames = F, 
+          summary = F,
+          title = "Prediction realization table Out-of-Sample Predictions",
+          notes = c( paste('Control Accuracy',round(1-altvar$results_os$g1_os_result, 3)), 
+                     paste('BTS Accuracy',    round(1-altvar$results_os$g2_os_result, 3)))) 
+
+```
+
+In the tables above the BTS model performs better producing a higher percentage of accurate prediction than the control group. Furthermore, the area below the ROC curve is larger for the BTS condition compared to the control group, which indicates better performance (See Appendix #1 for reference).
+
+### Residuals
+
+```{r, results='asis', echo=FALSE, warning=FALSE}
+stargazer(altvar$residual_table, 
+          type = "latex", 
+          header = F,
+          rownames = F, 
+          summary = F,
+          title = "(Absolute sum of residuals)/n")
+
+```
+
+The absolute sum of residuals of BTS model using the full data set i.e. In-Sample, as well as BTS model used to predict the Out-Of-Sample observation is lower. This indicates lower deviance from the actually observed empirical values when using the BTS treatment compared to the control group.
+
+### Comparing dominated alternatives
+
+Assuming respondents are making rational choices I would expect higher price will always dominate respondents choices comparing to lower one. In the conjoint desing there were two choice tasks, CJ1 and CJ10 where one options was dominant. In CJ1 the price of option 1 dominated the price of option 2 while all of the other characteristics are the same. In CJ10 the price of option 2 dominated the price of option 1.  From the graph below I can see that in CJ1 option 1 i.e. the dominant alternative was slightly more preferred in the Control group coparing to the BTS. When it comes to CJ10, option 2 i.e. the dominant alternative was slightly more preferred in the BTS compared to the control group.
+
+```{r fig.width=8, fig.height=7, echo=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(plot_freq, aes(x = group, y = value, fill = variable)) + xlab("Group") + ylab("Frequency") +  labs(fill = "Alternative") +
+  geom_bar(stat = 'identity', position = 'stack') + facet_grid(~ card) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+
+```
+
+
+### Product comparison
+
+From a practical standpoint, the estimated contrasting coefficients pose a serious question since the decisions based upon them would be different. In order to assess these differences, I look at different product compositions. 
+
+Graph 1 displays the probability of a product selection with different reimbursement levels while keeping others factors constant: desktop as device and browsing history as an extent of sharing information.  It is observed that the probability of making a choice is different between the two conditions when the reimbursement is the lowest and the highest. More specifically, for a reimbursement of 8 euros, respondents from the BTS condition indicate they are less likely to make a choice for a product that features sharing their browsing history on a desktop, whereas the probability of making a choice for the same product is higher in the control group. Furthermore, for a reimbursement of 12 euros, respondents from the BTS condition indicate they are slightly more likely to make a choice for a product that features sharing their browsing history on a desktop, whereas the probability of making a choice for the same product is lower in the control group. 
+
+
+```{r fig.width=8, fig.height=7, echo=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(bts_c[["plot.data_p1"]], aes(x=price, y=prob, color=group)) + 
+  geom_line(lwd=2) + 
+  labs(x="Price", y="P(choice)", title="Probability of product selection on different levels of reimbursement \nkeeping other factors constant on \ndevice: Desktop\nextent:  Internet History", col = "Series")+
+  theme_gray()+
+  scale_color_manual(labels = c("BTS", "Control"), values = c("#E69F00", "#56B4E9"))+ scale_x_continuous(labels = 8:12)
+
+
+```
+
+The same tendency is observed in Graph 2, which displays the probability of a choice of a product of different reimbursement levels with devices: desktop + mobile and extent: browsing history, application, and location. It can be noted from the two graphs, that respondents are less willing to make a choice involving sharing their data on multiple devices.
+
+
+```{r fig.width=8, fig.height=7, echo=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(bts_c[["plot.data_p2"]], aes(x=price, y=prob, color=group)) + 
+  geom_line(lwd=2) + 
+  labs(x="Price", y="P(choice)", title="Probability of product selection on different levels of reimbursement \nkeeping other factors constant on \ndevice: Desktop + Mobile\nextent:  Internet History + App + Location", col = "Series")+
+  theme_gray()+
+  scale_color_manual(labels = c("BTS", "Control"), values = c("#E69F00", "#56B4E9"))+ scale_x_continuous(labels = 8:12)
+
+
+```
+
+The different output from the two models results in different outcomes which could lead to different choice by marketeers. This is perhaps the most important result of this paper. Keeping all other factors constant, would result in different predictions from the two models and ultimately lead to different decisions made by the practitioners
+

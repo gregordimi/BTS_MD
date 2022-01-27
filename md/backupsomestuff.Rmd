@@ -1,0 +1,71 @@
+backup 
+
+
+
+
+
+
+
+
+## Experiment setting
+
+The context chosen for the conjoint experiment is privacy. More precisely, the questions are trying to assess what would be subjects' willingness to accept to give up their private online behavioral data on the different electronic devices they are using. There are three attributes: different devices, the extent of information that will be collected and the reimbursements that respondents could receive. Each of the attributes has three levels shown in the table below:
+
+
+
+The attributes and levels are determined based on consultation with a company provider of such data collections technology. The motivation for selecting this particular context is the increasing demand for behavioral data in the area of market research. Since this is an emerging trend, there is still no sufficient information about how much companies should pay to the participants for their data, nor participants have experience selling it. The focus of this research, however, is not in the particular context of the survey.
+
+## Questionnaire design and data collection
+
+### Designing a discrete choice experiment
+
+For the design of the choice experiment, I use @horne2014package and @wheeler2014algdesign. The method utilizes fractional factorial design for designing optimal choice experiments. Essentially the function works in the following way, as input values, it takes the number of factors and levels associated with each factor, the number of versions of the exercise and the number of desired choice tasks per each exercise and the number of alternatives per each task. Then it runs full factorial design for the given number of factors and levels. In accordance with the specified inputed number of tasks the function reduces the number of alternatives and generates optimal fractional factorial design. For a full discussion see @fedorov1972theory.
+
+```{r, tidy=TRUE}
+
+library(choiceDes)
+
+set.seed(999)
+
+factor_levels <- c(3,3,3)
+design <- dcm.design(cand = factor_levels, nb = 1, sets = 12, alts = 2 , Rd = 50, fname = "design_CA.txt" ,print = FALSE)
+
+```
+
+In order to fulfill the design requirements of beysian truth serum, the respondents are presented with forced choice among two alternatives (i.e. "None" alternative has not been presented). Furthermore, all of the respondents are shown the same version of the questionnaire. This design poses certain limitations on the conjoint strength, which are discussed in details the "Limitations" chapter.
+
+```{r, echo=FALSE, results='asis', message=FALSE}
+
+design_CA <- design$levels
+design_CA$X1 <- factor(x = design_CA$X1, levels = c(1:3), labels = c("Desktop", "Mobile", "Desktop/Mobile"))
+design_CA$X2 <- factor(x = design_CA$X2, levels = c(1:3), labels = c("Internet usage", "Internet usage/Apps usage", "Internet usage/Apps usage/Location"))
+design_CA$X3 <- factor(x = design_CA$X3, levels = c(1:3), labels = c("8E", "10E", "12E"))
+
+colnames(design_CA)[4:6] <- c("Device", "Extent", "Reimbursement")
+
+
+print( xtable( design_CA ), include.rownames = FALSE)
+
+```
+
+### BTS
+
+In order to estimate the BTS score, after each conjoint task, respondents are making they are presented to a question asking them to estimate what proportion of the population they think will make the same choice as they do. To reduce respondents' burden and optimize the survey for mobile devices instead of typing in their guess in an open field the respondents are presented with a scale with intervals. The figure below show a screenshot of a single task.
+
+
+![Insert image of task 1](C:\Users\grigo\Dropbox\projects\BTS_CONJOINT_THESIS\md\task1.jpg)
+
+## Analysis of BTS and incetivation
+
+BTS has been analyzed according to the formual already explained in the literature review. As the survey uses interval scale instead of open answer input, for the prediction score estimation, the function uses midpoint of the given range.
+
+BTS is an incentive compatible method, i.e. uses incentives to elicit true answers, thus the respondent who has the greatest score in all BTS scores has been awarded a certain monetary amount.  As for the control group, a random respondent from the sample who sucessfully completed the survey has been awarded the same monetary amount. Due to budget limitations not all respondents are awarded which may pose certain limitations, this issue is further discussed in the "Limitations".
+
+## Analysis of the choice experiment
+
+## Empirical comparison methodology
+
+### Estimates and goodness of fit
+
+
+

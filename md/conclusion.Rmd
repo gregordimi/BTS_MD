@@ -1,0 +1,51 @@
+---
+title: "conclusion"
+author: "Grigor Dimitrov"
+date: "November 19, 2016"
+output: pdf_document
+---
+
+## General discussion
+
+The main goal of this paper was to explore whether a new incentive-compatible method, the Bayesian truth serum, could improve the validity of a conjoint methodology compared to a traditional hypothetical conjoint setting. The main hypotheses were that the BTS model will provide better goodness of fit and provide better prediction realization rate compared to the control group. The context of the research was a new service development regarding collecting  private data. The research examined whether the BTS could result in providing more truthful respondents in a context where objective truth is absent. In this research, I applied the BTS in a context that is hadn't been tested before – preference measurement methodologies. Specifically, I used a choice based conjoint to test whether the BTS could improve the quality of the data. 
+
+The results showed that the conjoint model based on the BTS and the control group differ in few key aspects. First, different effects of the variables are observed between the two models. Respondents from the BTS condition are more likely to choose an alternative with a higher reimbursement compared to respondents from the control condition. That would imply that the reimbursement is the 'deal-breaker' in the BTS condition in choosing to sell one's data, ceteris paribus. The comparison of the models reveals differences between the probabilities of model selection based on the different reimbursement levels. That would imply that respondents in the BTS condition are less willing to make a choice if the reimbursement is lower, but they are more willing to make a choice if the reimbursement is higher. From a practitioner standpoint, this implies different choices with the usage of the different methodologies.
+
+With this study, I confirmed all of the outlined hypothesis: 
+
+>H1. BTS will outperform the control group on choices where on of the alternatives dominate the other: _Partially confirmed_
+
+>H2. The model estimated from the BTS sample will provide higher prediction score comparing the actual choice and the fitted model.
+
+>H2.1 Comparing in-sample absolute difference between the actual and the predicted choice: _confirmed_
+
+>H2.2 Comparing in-sample prediction-realization table: _confirmed_
+
+>H2.3 Comparing out-of-sample absolute difference between the actual and the predicted choice: _confirmed_
+
+>H2.4 Comparing out-of-sample prediction-realization table: _confirmed_
+
+## Contributions
+
+This research contributed methodologically to the stream of research testing the validity of the Bayesian truth serum. More precisely, it complements the stream of research that is in favor of using the approach for truth telling. Overall, the research found that the BTS is performing well in a setting where truthful answers are unknowable. The paper confirms that using BTS in a choice based conjoint experiment leads to improvement in data reliability.  Furthermore, the research adds up to the emerging stream of literature exploring how incentive-compatible methodologies could be applied to preference measurement experiments.  The research further confirms the notion that incentive-compatible methodologies could be utilized within preference measurement experiments. 
+
+This research also offers several managerial insights for market researchers. Comparing the probability of making a choice across the two conditions, showed that different results are obtained. A market researcher could infer different conclusions depending on whether they are using an incentive-compatible method, BTS or not. 
+
+## Limitations
+
+One of the limitations of this research was ensuring an efficient conjoint design. Conjoint design refers to "process of generating specific combinations of attributes and levels that respondents evaluate in choice questions" (@johnson2013constructing ). An efficient conjoint design allows for better estimates of the parameters or the part-worths for a given number of choice tasks. To generate a design with 4 levels and 4 attributes per level, a total of 256 product profiles are generated, in order to reduce the number of profiles shown to respondents and have a robust statistical information, the choice tasks are varied for respondents i.e. each respondent receives a different set of alternatives to evaluate. Different design types can account for different effects that could be captured depending on the research objectives, e.g. main effects only, interaction, cross effects, etc. In order to apply BTS with conjoint, to calculate the truth score per choice task respondents were given one design version. Hence, a trade-off had to be made between ensuring efficient conjoint design and applying the BTS. 
+
+Furthermore, in order to make the BTS exercise easier for the respondent, the conjoint exercise is held up to only two alternatives with no "None" option. Depending on the experimental design conjoint tasks maybe composed by more than two choices and also include a "None" option, as it is realistic that some respondents wouldn't select any of the alternatives presented to them within a given task. BTS design setting would increase the respondent burden arguably too much if they have to fill in their predictions about more than two alternatives. A possible way to overcome this limitation would be to ask only for the percentage of the population that would take the same option and then assume a certain distribution across the other two (or more) alternatives.
+
+Moreover, incentives were not distributed immediately and to everyone according to their truth scores. In the BTS condition, participants were told they could receive an award of 20 euro if they have the highest truth score. Therefore, not all respondents were provided incentives for their time and effort. Furthermore, the conjoint exercise is already a lengthy survey to be filled in and adding more questions to it could increase respondents' burden. Weaver and Prelec, 2012 argue that "it would be sufficient to elicit predictions from a small number of randomly selected respondents and use their predictions to calculate initial scores". In that way, estimations of an answer's average distribution could be done and in the survey itself, respondents can provide answers only to the conjoint experiment and only provide their opinion, reducing their burden.  Additionally, utilizing this approach it would be possible to calculate respondents' truth score "on-the-go", hence after they finish the survey they would know their score and their reward, which could induce their motivation to participate. 
+
+The survey was distributed through social media, hence it did not account for a controlled experimental environment. A controlled experiment would allow reducing the noise in the data, as it reduces the effect of other variants different than the independent, which results in a positive impact on the reliability of the data and the results. Yet, this two limitations can be relaxed since the main objective of the paper is to access the reliability of BTS in market research application where no control over the environment has been posed.
+
+The experiment can be replicated with higher sample size. Due to the low sample size, each data point heavily affects the outcomes of the research.
+
+Due to a programming mistake, the product attributes were presented in different order for the control and BTS groups, in the control group the price was presented first while in the BTS condition the price was presented as the last attribute in each profile. This results in losing control for the effect of the order. I would expect that characteristics presented earlier will have higher effects, therefore this issue diminished the difference between the control and the treatment group. However, this is only a speculation. Even presented as last attribute price has a higher importance in the BTS condition compared to the control group.
+
+
+## Future research
+
+It is common practice for researchers to include the so-called hold out cases that are used for model evaluations. Those conjoint tasks are held constant across the whole sample. In order to improve both BTS and the conjoint design efficiency I propose an experimental design where these hold out conjoint tasks are also applied BTS which would make BTS scores estimation possible, while the rest of the conjoint tasks are varied across the sample in order make the analysis more robust and estimation of interaction effects across parameters possible. 

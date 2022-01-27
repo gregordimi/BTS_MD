@@ -1,0 +1,79 @@
+---
+title: "Appendix Figures"
+author: "Grigor Dimitrov"
+date: "November 19, 2016"
+output: pdf_document
+---
+
+# Appendix 1. Figures and Graphs
+
+```{r echo=FALSE, warning=FALSE} 
+library(sjPlot)
+library(plotROC)
+
+```
+
+## Odds rations
+
+```{r fig.width=6, fig.height=5, echo=FALSE, warning=FALSE}
+
+sjp.glm(fit =  altvar$nonas$results_allbts,   type = "or", title = "Odds ratios - BTS Group - P(Choice)",     show.summary =T, show.intercept = T)
+sjp.glm(fit =  altvar$nonas$results_control,  type = "or", title = "Odds ratios - Control Group - P(Choice)", show.summary =T, show.intercept = T)
+sjp.glm(fit =  altvar$nonas$results_bts,      type = "or", title = "Odds ratios - BTS Group - P(Choice)",     show.summary =T, show.intercept = T)
+
+```
+
+
+## Marginal Effects
+
+
+```{r fig.width=6, fig.height=5, echo=FALSE, warning=FALSE}
+
+plot_bts <- function(model,variables,title){
+  sjp.glm(fit = model, type = "pred", vars = variables,   facet.grid = FALSE, show.ci = TRUE, show.scatter = T, axis.lim = c(0, 1), show.values = T, title = title,  geom.size = 1)
+}
+
+plot_bts(altvar$nonas$results_fdata$g1, c("device_e","price_N"),c("Control - Device x Price - Effects"))
+plot_bts(altvar$nonas$results_fdata$g2, c("device_e","price_N"),c("BTS     - Device x Price - Effects"))
+
+plot_bts(altvar$nonas$results_fdata$g1, c("extent_e","price_N"),c("Control - Extent x Price - Effects"))
+plot_bts(altvar$nonas$results_fdata$g2, c("extent_e","price_N"),c("BTS     - Extent x Price - Effects"))
+
+plot_bts(altvar$nonas$results_fdata$g1, c("device_e","extent_e"),c("Control - Device x Extent - Effects"))
+plot_bts(altvar$nonas$results_fdata$g2, c("device_e","extent_e"),c("BTS     - Device x Extent - Effects"))
+
+```
+
+
+### Marginal Effects - BTS Treatment impact
+
+```{r fig.width=6, fig.height=5, echo=FALSE, warning=FALSE}
+
+sjp.int(fit = altvar$nonas$results_fdata$bts, type = "eff", show.ci = TRUE, title = "Marginal Effects - P(Choice) - BTS IMPACT", mdrt.values = "all", swap.pred = T, show.values = T, digits = 2, ylim = c(0.15,0.85), geom.size = 1)
+
+```
+
+### Receiver operating characteristic curve
+
+
+#### ROC In-Sample Predictions
+ 
+```{r fig.width=6, fig.height=5, echo=FALSE, warning=FALSE}
+
+ggplot(altvar$roc$is_data, aes(d = D, m = M, color = group)) + geom_roc() + style_roc() +  labs(title="In-Sample ROC Curve", col = "Group")+
+  annotate(geom = "text", x = 0.8, y = 0.2, label = altvar$roc$is_area_c) +
+  annotate(geom = "text", x = 0.8, y = 0.4, label = altvar$roc$is_area_bts)
+
+
+```
+
+
+#### ROC Out-Of-Sample Predictions
+
+```{r fig.width=6, fig.height=5, echo=FALSE, warning=FALSE}
+
+ggplot(altvar$roc$os_data, aes(d = D, m = M, color = group)) + geom_roc() + style_roc() +  labs(title="Out-of-Sample ROC Curve", col = "Group")+ 
+annotate(geom = "text", x = 0.8, y = 0.2, label = altvar$roc$os_area_c) +
+annotate(geom = "text", x = 0.8, y = 0.4, label = altvar$roc$os_area_bts)
+
+```

@@ -1,0 +1,426 @@
+[[AdvancedFormat]]
+
+[[Block:CJNT Tasks]]
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT1]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>10 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage</div>
+<div id='attr' class='att3'>8 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT2]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>10 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div>
+<div id='attr' class='att3'>10 Euro</div><div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT3]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>8 Euro</div><div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage</div>
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT4]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div>
+<div id='attr' class='att3'>10 Euro</div><div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT5]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div>
+<div id='attr' class='att3'>10 Euro</div><div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT6]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage</div>
+<div id='attr' class='att3'>8 Euro</div><div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT7]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div>
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT8]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>8 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div>
+<div id='attr' class='att3'>10 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT9]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>8 Euro</div><div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div>
+<div id='attr' class='att3'>8 Euro</div><div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT10]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>10 Euro</div><div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage</div>
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT11]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>8 Euro</div><div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage</div>
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div>
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:CJNT12]]
+If the Datatron offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att3'>12 Euro</div><div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div>
+<div id='attr' class='att3'>10 Euro</div><div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div>
+
+[[PageBreak]]
+
+
+
+[[Block:BTS CJNT Tasks]]
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT1]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>10 Euro</div>
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>8 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS1]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT2]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div><div id='attr' class='att3'>10 Euro</div>
+<div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div><div id='attr' class='att3'>10 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS2]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT3]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>8 Euro</div>
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div><div id='attr' class='att3'>12 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS3]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT4]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div><div id='attr' class='att3'>12 Euro</div>
+<div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div><div id='attr' class='att3'>10 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS4]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT5]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div><div id='attr' class='att3'>12 Euro</div>
+<div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>10 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS5]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT6]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>12 Euro</div>
+<div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div><div id='attr' class='att3'>8 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS6]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT7]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div><div id='attr' class='att3'>12 Euro</div>
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>12 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS7]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT8]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div><div id='attr' class='att3'>8 Euro</div>
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div><div id='attr' class='att3'>10 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS8]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT9]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div><div id='attr' class='att3'>8 Euro</div>
+<div id='attr' class='att1'>Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div><div id='attr' class='att3'>8 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS9]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT10]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>10 Euro</div>
+<div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>12 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS10]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT11]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage</div><div id='attr' class='att3'>8 Euro</div>
+<div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div><div id='attr' class='att3'>12 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS11]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BCJNT12]]
+If the company offers you these two products, which one would you prefer.
+
+[[Choices]]
+<div id='attr' class='att1'>Desktop data <br /> Mobile data</div><div id='attr' class='att2'>Internet usage <br /> Applications usage</div><div id='attr' class='att3'>12 Euro</div>
+<div id='attr' class='att1'>Desktop data</div><div id='attr' class='att2'>Internet usage <br /> Apps usage <br /> Location</div><div id='attr' class='att3'>10 Euro</div>
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:BTS12]]
+Think about the rest of the respondents participating in the survey. What percentage of them do you feel are going to select the same option as you just did?
+[[Choices]]
+1 - 10%
+11 - 20%
+21 - 30%
+31 - 40%
+41 - 50%
+51 - 60%
+61 - 70%
+71 - 80%
+81 - 90%
+91 - 100%
+
+[[PageBreak]]
+

@@ -1,0 +1,25 @@
+---
+title: "Design and Survey"
+author: "Grigor Dimitrov"
+date: "November 19, 2016"
+output: pdf_document
+---
+
+# Appendix 3. Design and Survey
+
+## Conjoint Design
+
+```{r, results='asis', echo=FALSE, warning=FALSE}
+stargazer(full_design, 
+          type = "latex",
+          header = F,
+          rownames = F, 
+          summary = F,
+          title = "Conjoint Design")
+
+```
+
+
+## Full Survey
+
+The full survey appears at the end of the document

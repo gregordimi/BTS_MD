@@ -1,0 +1,114 @@
+---
+title: "literature_conjoint"
+author: "Grigor Dimitrov"
+date: "November 19, 2016"
+output: pdf_document
+---
+
+## Conjoint analysis
+
+### Origins of conjoint methodology and analysis
+
+Conjoint analysis has been used for circa 44 years and it is still evolving. It was introduced to the academia by @green1971conjoint in their paper "Conjoint Measurement for Quantifying Judgmental Data". Shortly afterward, it was adopted by practitioners in diverse areas such as new product development, pricing, segmentation and positioning [@ding2005incentive]. Initially, the theory was referred to as conjoint measurement, but once it was appreciated by practitioners and transformed to evolving research stream by scientists, the term conjoint analysis (hereafter "CA") was adopted [@hauser2004conjoint]. Nowadays, the term CA is used both as a reference to the theory behind measuring judgmental data as well as for different methods used for this purpose @louviere1988conjoint. In the next sections, I will introduce a brief description of the theory behind CA followed by the introduction in CA design. As this paper will employ choice based conjoint (hereafter "CBC") the CA design section will be focused on CBC.
+
+### Multidimensional scaling, judgmental data and choice data
+
+CA originates from mathematical psychology [@green1978conjoint] and it faces the mapping challenge of multidimensional scaling (MDS) to "translate a point from perceptual space into a corresponding point(s) of product feature space" [@hauser2004conjoint]. More precisely, the mapping challenge emerged from psychometrics, explored by @krantz1971foundations in their influential book "Foundations of measurement", where the authors investigated behavioral axioms that would make possible decomposition of an overall judgment.
+
+@hauser2004conjoint explain that essentially CA is a method for MDS and clustering applied to marketing questions. Paul Green uses MDS to decompose overall consumers' preferences and perceptions toward a certain product into a partial contribution of product's features (also called "part-worths"). Quoting @green1978conjoint seems the most appropriate to explain the name of this elegant theory " ... applications by psychometricians and consumer researchers have emphasized the scaling aspects - finding specific numerical scale values, assuming that a particular composition rule applies, possibly with some error. Accordingly, it now seems useful to adopt the name, conjoint analysis, to cover models and techniques that emphasize the transformation of subjective responses into estimated parameters". @louviere1988conjoint defines judgmental data measurement as respondents' evaluation of a product profiles represented by a set of alternatives of products' attributes. The data is usually in at least ordinal scale resulted from rating or ranking the profiles. In the same paper, the author defines choice data as respondent's preference of a particular profile among a given set of profiles. Profiles are again represented by a composition of product attributes. According to @louviere1988conjoint, the terms judgmental and choice data have been used as mutually replaceable. However, there is an important distinction between judgmental and choice data, namely, judgment data may not satisfy important assumptions that are needed to forecast choice behavior.
+
+Choice based conjoint was proposed by @louviere1983design as an extension of the traditional conjoint analysis. The authors introduced CBC following by the recent development in the choice behavior modeling, namely, the introduction of multinomial and conditional logit models by @mcfadden1973conditional. CBC constitutes of a choice evaluation between profiles. It allows for interaction and cross effects between different attributes [@chrzan2000overview]. Moreover, with CBC it is possible to measure preferences at an individual level and it represents a realistic choice task in which respondents are required to make a certain trade-off. 
+
+
+### Designing a choice-based conjoint
+
+There are several critical steps involved in designing conjoint experiments that are common for all CA [@green1978conjoint; @green1990conjoint; @hauser2004conjoint].
+
+1.    Decomposition of product on product attributes
+2.    Stimuli representation
+3.    Stimuli configuration
+4.    Data collection
+5.    Estimation
+
+Due to the broadness of the term CA, it is difficult to assign a meaningful explanation of each step without focusing on a particular CA approach. Although the first 2 steps are common for all types of CA, stimuli configuration, data collection, and estimation tasks are interlinked. @louviere1988conjoint refers to the first three common steps as experimental design techniques and explains that researchers rely on them to create profile configuration. However, the data collection and estimation vary per different "paradigms" (or approaches used above). For example, collection and employing judgmental data implies evaluation of one profile at a time by rating it on an ordinal scale, which is referred to as "Rating-based conjoint", while choice data implies a choice of one profile among several at a time mimicking real purchase behaviour which is referred to as "Choice-based conjoint". Depending on the different data collection techniques, the method of analysis and estimation of the "part-worth" utilities differs. The focus of data collection and estimation will be on CBC while briefly describing the other possible approaches.
+
+#### Decomposition of product on product attributes
+
+There are 2 critical issues that should be taken into account in this first step [@hauser2004conjoint]. First, defining product's attributes and respectively the levels in which each attribute is divided. Second, defining the function of each attribute, respectively each attribute level, in the overall model of respondents' preferences. Functions can be: vector monotone preference (approximately linear), ideal point preference (convex or concave) and part-worth preference (discrete or categorical). In contemporary literature on the topic, all preference functions are referred to as "part-worths", despite the fact that they may have different functions in the overall preference structure according to earlier articles.
+
+In order to illustrate the steps better, I will use an example. A company X is planning to release a new smartphone on the market. After a preliminary research, company X decides that the most important features of their smartphone are: Product name, Screen size, Memory and Price. After consultation with engineering and marketing departments, the following product attribute levels can be distinguished:
+
+
+Table 1
+
+If we consider independently price and memory, they would have approximately linear utility for the respondents (i.e. the higher the price, the lower utility). However, considering the screen size, we can expect a concave shape of the preference (i.e. most people would probably prefer neither too small nor too big phone). As brand name is a discrete preference, it belongs to the so-called part worth preferences.
+
+#### Stimuli representation
+
+There are many ways that stimuli can be presented to subjects such as text, pictures, video, physical objects and even verbal description. However, as in the recent years, the established way of conducting marketing research interviews is in online web-based forms, researchers are taking advantage of various kinds of available multimedia [@dahan2000predictive]. Naturally, the more realistic the stimuli are presented to the subjects the better quality of the data is to be expected.
+
+#### Stimuli configuration
+
+Once the product is decomposed on its attributes and attributes' levels, a large number of product profiles can be generated per each combination. However, ever since the emergence of CA, researchers recognized that showing all possible products profiles is not feasible as it is tiresome for the respondents and therefore, it is not cost effective and can potentially lead to biased estimates [@carmone1978robustness].
+
+To limit respondent's burden and provide more robust estimates, several approaches to reduce product profiles can be applied. However, product profile configuration is closely related to the data collection method and estimations, thus, collection and estimation cannot be examined independently. For example, one way to reduce product profiles is orthogonal fractional factorial design or just "orthogonal design". In an orthogonal design, only the extreme combinations of products' features are being evaluated, "the levels of the features are chosen such that, for each pair of features, say a and b, the high level a appear equally often in profiles that have a high-level b as in profiles that have a low level of b, and vice versa" [@hauser2007note]. In a demonstration paper, @green1974design applied orthogonal design to an extreme example of 4x3x27 (1536) product profiles, was able to reduce the product profiles to only 16 in order to estimate the main effects. As expected, such reduction comes with certain trade-offs, that is, preference independence assumption, which does not allow any interactions among the different attributes to be estimated.
+
+
+Table 2 Orthogonal design example
+
+|Card ID |    Brand Name|    Screen Size |    Memory |    Price  |
+|--------|------------|------------|--------|---------|
+|1         | ProductA    |   4'         |  32      |  300   |
+|2         | ProductB    |   3'         |  32      |  400   |
+|3         | ProductB    |   5'         |  32      |  200   |
+|4         | ProductB    |   6'         |  64      |  300   |
+|5         | ProductA    |   5'         |  16      |  300   |
+|6         | ProductB    |   5'         |  16      |  200   |
+|7         | ProductB    |   6'         |  16      |  400   |
+|8         | ProductA    |   5'         |  64      |  400   |
+|9         | ProductA    |   3'         |  16      |  200   |
+|10         | ProductA    |   6'         |  32      |  200   |
+|11         | ProductB    |   3'         |  16      |  300   |
+|12         | ProductA    |   6'         |  16      |  200   |
+|13         | ProductA    |   3'         |  64      |  200   |
+|14         | ProductB    |   4'         |  64      |  200   |
+|15         | ProductB    |   4'         |  16      |  200   |
+|16         | ProductA    |   4'         |  16      |  400   |
+
+For instance, our smartphone example would generate a total of 72 (2x4x3x3) possible product profiles. As seen in Table 2, using orthogonal design we can reduce this number to 16. Orthogonal design, full factorial desigh and fractional factorial design are the starting point for more advanced stimuli configurations that are used in practice nowadays. 
+
+#### Data collection
+
+The methods described below are proven to be reliable in large scale commercial applications (see <!-- -->@hauser2004conjoint for discussion). 
+
+* Partial profile CA
+
+Also known as Two-attribute-at-a-time trade-off analysis, in this setting respondents are presented to two attribute trade-off tables where they rank their preferences for different attribute levels. The number of stimuli can vary from two to many, nonetheless, two attributes at a time are the most popular [@hauser2004conjoint].
+
+* Full-Profile CA
+
+Products are described by the levels of the attributes they contain. Respondents are then asked to rank order all stimuli or to provide metric rating of each stimulus. By controlling the attribute combinations, based on correlations of the attributes with respondents' preferences, the utility for each level of each attribute tested can be estimated.
+
+* Choice-Based (CBC)/Discrete-Choice CA
+
+Respondents are presented to a given set of product profiles, once they make their choice a new set is presented. The utilities are estimated based on respondents' choices. Also known as stated preference models, they are based on random utility models (RUM). Respondent's utility is presented as combination of product's features and an error term. Based on assumption about the distribution of the error term, the probability of purchase of a product assembled out of a given set of features can be estimated.
+
+* Adaptive CA
+
+As currently the most preferred way of data collection is computer based interviews, this enables researcher to make computations during the interview itself and adapt consecutive questions based on utilities estimated during the initial stage of the exercise. This method allows for reducing the survey length without losing valuable information or diminishing the power of the analysis.
+
+#### Estimation
+
+* Regression based models
+
+If the data obtained from the respondents for their preferences is in interval scale, then the partworths can be represented by dummy variables and ordinary least square (OLS) estimation can be adopted.
+
+* Random utility models (RUM)
+
+If the data obtained is from CBC, RUM can be adopted.  The assumption of utility maximization combined with distributional assumptions of the unobserved term states that there is "a known function that maps the partworth levels onto the probabilities that each profile is chosen from a given choice set" @hauser2004conjoint.
+
+* Hierarchical Bayes Estimation (HB)
+
+In order to improve the predictive power of CA, researchers approached the problem using HB estimation. However, using HB slightly changes the idea of the analysis i.e. researchers do not try to estimate the pathworths, but rather attempt to characterize the uncertainty behind them [@hauser2004conjoint]; e.g. the HB estimation allows for more accurate results while showing respondents fewer choice tasks. 
+
+Conjoint analysis has been widely used in many different domains in market research, allowing businesses to optimize their product development, pricing strategy, find the optimal product or portfolio configuration, etc. However, in a marker research workplace, typically the conjoint exercise in administered in hypothetical environment. In such an environment, respondents could potentially give 'hypothetical answers' [@scott1965valuation] as respondents are not offer a strong incentive to carefully and thoughtfully think about their answers [@ding2005incentive]. Recently, researchers have examined different incentive-compatible methods that could measure better respondents' true preferences in conjoint analysis [@ding2005incentive; @ding2007incentive; @toubia2012measuring]. In the next section, I will focus on specific problems of online opinion taking and how incentive-compatible methodologies can improve model performance while at the same time increasing respondents' engagement and motivation. 
